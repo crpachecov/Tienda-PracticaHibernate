@@ -18,6 +18,13 @@ que representa una base de datos utilizada por la aplicación-->
 <!--            password-->
             <property name="javax.persistence.jdbc.password" value=""/>
 
+            <property name="hibernate.show_sql" value="true"/>
+<!--            value = create-drop, create, update, validate-->
+<!--            create-drop, crea las tablas y las elimina al finalizar la ejecución-->
+<!--            create, crea las tablas-->
+<!--            update, actualiza las tablas, si falta un elemento lo crea-->
+<!--            validate, válida las tablas se usa para consultas-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
 <!--            dialecto, es como se comunica nuestra BD-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
         </properties>

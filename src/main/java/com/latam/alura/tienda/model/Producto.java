@@ -1,7 +1,15 @@
 package com.latam.alura.tienda.model;
 
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 //en Hibernate reconoce las clases como entidades
 @Entity
@@ -16,6 +24,22 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private BigDecimal precio;
+    private LocalDate fechaRegistro = LocalDate.now();
+
+    //Para que guarde la palabra en la base de datos y no la posicion del enum
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
+
+    public Producto(String nombre, String descripcion, BigDecimal precio, Categoria categoria) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.categoria = categoria;
+    }
+
+    public Producto() {
+
+    }
 
     public Long getId() {
         return id;
