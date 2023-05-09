@@ -2,11 +2,10 @@ package com.latam.alura.tienda.model;
 
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -27,7 +26,10 @@ public class Producto {
     private LocalDate fechaRegistro = LocalDate.now();
 
     //Para que guarde la palabra en la base de datos y no la posicion del enum
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
+
+    //Creamos la relación entre las tablas
+    @ManyToOne //Cardinalidad muchos a uno
     private Categoria categoria;
 
     public Producto(String nombre, String descripcion, BigDecimal precio, Categoria categoria) {
