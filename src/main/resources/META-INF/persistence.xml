@@ -19,6 +19,7 @@ que representa una base de datos utilizada por la aplicación-->
             <property name="javax.persistence.jdbc.password" value=""/>
 
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
 <!--            value = create-drop, create, update, validate-->
 <!--            create-drop, crea las tablas y las elimina al finalizar la ejecución-->
 <!--            create, crea las tablas-->
